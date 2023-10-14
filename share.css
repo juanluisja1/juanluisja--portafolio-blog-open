@@ -137,11 +137,7 @@
     /* box-shadow: inset 0 -2px 0 0 var(--primary-cta-bg-green); */
 }
 
-main {
-    display: flex;
-    margin: 4rem 1rem;
-   
-}
+
 
 .main-nav__item a{
     color: var(--main-font-light-orange);
@@ -178,6 +174,13 @@ main {
 }
 
 
+
+main {
+    display: flex;
+    margin: 4rem 1rem;
+    flex-direction: column;
+}
+
 /* first section skills and photo */
 
 
@@ -186,6 +189,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     color: black;
+   
 }
 
 /* 
@@ -211,10 +215,19 @@ margin-top:2rem;
     margin: 0.2rem 0;
 }
 
+ul .title {
+    display: flex;
+    list-style-type: none;
+    
+}
+
+
 img{
     border-radius: 5%;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
+    max-width: 18rem;
+    max-height: auto;
     /* margin: 0 2rem; */
     /* margin-bottom: 4rem; */
     /* align-self: center; */
