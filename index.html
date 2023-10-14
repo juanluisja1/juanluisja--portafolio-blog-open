@@ -10,7 +10,7 @@
     <!-- general styles -->
     <link rel="stylesheet" href="share.css">
     <!-- index (about.html) -->
-    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="home.css" />
     
     <!-- Favicons -->
     <link
@@ -32,74 +32,123 @@
   <body>
 
     <!-- header -->
-    <header class="main-header">
-      <div>
-          <button class="toggle-button">
+    <header class="main-header ">
+      
+      <nav class="main-nav ">
+          <ul class="main-nav__items" >
+            <button class="toggle-button">
               <span class="toggle-button__bar"></span>
               <span class="toggle-button__bar"></span>
               <span class="toggle-button__bar"></span>
           </button>
-          <a style="width: 80px; height: 100px ;" href="index.html" class="main-header__brand">
-              <img  src="assets/profile/.jpeg" alt="Juan Luis - Software Engineering | Web Developemnt 2x2 photo">
-          </a>
-      </div>
-      <nav class="main-nav">
+          </ul>
+          <ul class="main-nav__items " >
+            <il class=" main-nav__item"> <a class="profile__name" href="#">Juan Luis Jimenez</a><span class="bolder"></span>
+            </il>
+          </ul>
           <ul class="main-nav__items">
-              <li class="main-nav__item">
-                  <a href="index.html">About</a>
+            <!-- simpliest menu  -->
+            <!-- xtended resume -->
+              <li class="main-nav__item menu">
+                  <a href="index.html">Home</a><span class="bolder"></span>
               </li>
               <!-- blog will have categories for portafolio, dairy entries, new ect -->
-              <li class="main-nav__item">
-                  <a href="blog/index.html">Blog</a>
+              <li class="main-nav__item menu">
+                  <a href="blog/index.html">Blog</a><span class="bolder"></span>
               </li>
               <!-- this sections will contain open source project, contribution to society -->
-              <li class="main-nav__item main-nav__item--cta">
-                  <a href="open/index.html">Open</a>
+              <li class="main-nav__item menu">
+                  <a href="open/index.html">GitHub</a><span class="bolder"></span>
               </li>
           </ul>
       </nav>
+      <nav class="mobile-nav">
+        <ul class="mobile-nav__items">
+            <li class="mobile-nav__item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="blog/index.html">Blog</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="open/index.html">Open</a>
+            </li>
+        </ul>
+    </nav>
   </header>
-    <!-- mobile nav -->
-    <nav class="mobile-nav">
-      <ul class="mobile-nav__items">
-          <li class="mobile-nav__item">
-              <a href="index.html">About</a>
-          </li>
-          <li class="mobile-nav__item">
-              <a href="blog/index.html">Blog</a>
-          </li>
-          <li class="mobile-nav__item mobile-nav__item--cta">
-              <a href="open/index.html">Open</a>
-          </li>
-      </ul>
-  </nav>
-    <!-- Skills section -->
+    
+    <main>
+      <!-- photo to left, hard and soft skills to right -->
+      <section class="hero section_border">
+       <div class="hero__container skills">
+        <ul>
+          <li>Agile Project Mannagement</li>
+          <li>Git&GitHub</li>
+          <li>NodeJS/ExpressJs</li>
+          <li>algorithms & Data Structures</li>
+          <li>HTML5/CSS3</li>
+          <li>JavaScript</li>
+          <li>FlexBox</li>
+          <li>CSS Grid</li>
+          <li>Web Programming</li>
+          <li>Web API's implementation</li>
+          <li>Object Oriented Programming</li>
+          <li>Responsive Design</li>
+          <li>MySQL/SQlite</li>
+        </ul>
+       </div>
+       <div class="hero__container profile">
+          <div class="hero__container__image">
+            <div class="hero_item"><img class="profile__img shadow__img" src="assets/profile/juan-2x2.jpg" alt="profile--picture-juan-jimenez" />
+            </div>
+          </div>
+          <div class="profile_desc">
+            <p class="desc">
+              I am a problem solver, a team player, a lifelong learner, Software Engineer and Computer Science Student.
+            </p>
+          </div> 
+        </div>
+        <div class="hero__container skills__desc "  >
+          <!-- hero__container hero__skills -->
+          <p class="hero__skills">
+            I excel in <span class="soft" >Agile Project Management</span> for flexible project handling and use <span class="hard">Git & GitHub</span> for <span class="hard">version control</span> and <span class="soft">collaboration</span>.
+             With <span class="hard">NodeJS</span> and <span class="hard">ExpressJS</span>, I build powerful <span class="hard">server-side</span> applications. 
+             My expertise in <span class="hard" >algorithms and data structures</span> aids in solving complex problems efficiently.
+              For web design, I create responsive pages with <span class="hard" >HTML5</span> and <span class="hard">CSS3</span> . 
+              Web programming and <span class="hard" >Object-Oriented Programming(OOP) </span>  are my foundations for crafting interactive, modular code.
+               <span class="hard" >Responsive Design</span> ensures adaptability across devices. I manage <span class="hard">databases</span> using <span class="hard">SQLite</span> and <span class="hard">MySQL</span>, and master <span class="hard">Structured Query Language (SQL)</span>.
+                <span class="hard">JavaScript</span> brings interactivity to my web projects, captivating users with engaging experiences.
+                 These skills empower me to excel in web development and software engineering.
+          </p>
+        </div>
+      </section>
+   
 
-    <!-- Hero Section -->
-
-    <!-- Projects section -->
-
-    <!-- Contact section -->
-
-    <!-- More about -->
-
-    <!-- Social accounts - Fixed to the right -->
-
-    <!-- Scroll to top -->
-
-    <!-- Footer section -->
-
-    <!-- Website scripts -->
-    <script src="assets/js/app.js"></script>
-
-    <!-- scripts  -->
-    <!-- <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script> -->
+        <!-- Projects section -->
+    
+        <!-- Contact section -->
+    
+        <!-- More about -->
+    
+        <!-- Social accounts - Fixed to the right -->
+    
+        <!-- Scroll to top -->
+    
+        <!-- Footer section -->
+    
+        <!-- Website scripts -->
+        <script src="assets/js/app.js"></script>
+    
+        <!-- scripts  -->
+        <!-- <script
+          type="module"
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+          nomodule
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script> -->
+    </main>
+  
   </body>
 </html>
