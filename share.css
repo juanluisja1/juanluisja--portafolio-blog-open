@@ -76,11 +76,12 @@
 
     main{
         display: flex;
+
        
     }
 
     .section_border{
-        margin: 1%;
+        margin: 3%;
         background-color: var(--font-active-Sinbad) ;
         padding:2%;
         border-radius: 1%;
@@ -91,11 +92,11 @@
     flex-wrap: nowrap;
     position:fixed;
     width: 100%;
-    height: 3.2rem;
+    /* height: 4rem; */
     top: 0;
     background-color: var(--bg-wedgewood);
      /* padding: 0.2rem; */
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     font-family: 'Inika', serif;
     box-shadow: 1px 1px 3px 8px #61616186 ;
@@ -182,7 +183,8 @@
 .main-nav__item .profile__name{
     color: white;
     text-decoration: none;
-    margin: 0 6rem;
+    margin: 0;
+    margin-right: 7.5rem;
     font-family:inherit;
 }
 
@@ -194,6 +196,11 @@
     flex-grow: 1; /* Set the middle element to grow and stretch */
   
     /* flex-wrap: nowrap; */
+}
+
+.main-nav__items{
+
+    justify-content: center;
 }
 
 /* home blog github  */
@@ -338,7 +345,7 @@ img{
     border-radius: 3px;
     color: var(--font-geyser);
     font-size: 1.2rem;
-    padding: 1rem;
+    padding: 2rem;
     text-indent: 1rem;
     text-align: justify;
 }
@@ -368,19 +375,76 @@ img{
 
 
 
+@media (max-width:935px) {
+
+    .section_border{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        box-shadow: 0px 0px 5px 0px #08273B;
+       
+    }
+
+   
+
+    .skills, .hero__container .skills__desc, .hero__skills {
+        display: none;
+    }
+
+
+
+    .profile, .profile_desc, .hero__container__image{
+        width: 100%;
+    }
+
+   .hero__container__image{
+    text-align: center;
+   }
+
+   .profile_desc{
+    font-size: 1.6rem;
+   }
+
+    p.desc {
+        text-align: center;
+    }
+
+        /* profile name main menu style */
+.main-nav__item .profile__name{
+    color: white;
+    text-decoration: none;
+    margin: 0 0rem;
+    margin-right:2.5rem;
+    font-family:inherit;
+}
+    
+}
+
+
 @media (min-width: 1160px) {
     
     main{
-        margin: 2% 12%;
+        margin: 3% 12%;
     }
 
     .section_border{
         margin: 3%;
     }
 
-    
-    
+    .hero__skills {
+        padding:2rem;
+    }
 
+
+    /* profile name main menu style */
+    .main-nav__item .profile__name{
+        color: white;
+        text-decoration: none;
+        margin: 0;
+        font-family:inherit;
+    }
+   
+    
 
     .main-nav__items:nth-child(1){
         /* display:none; */
@@ -400,45 +464,3 @@ img{
         margin-right:3rem ;
     }
 }
-
-@media (max-width:935px) {
-
-
-    .section_border{
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        box-shadow: 0px 0px 5px 0px #08273B;
-    }
-
-    .skills, .hero__container .skills__desc, .hero__skills {
-        display: none;
-    }
-
-    .profile, .profile_desc, .hero__container__image{
-        width: 100%;
-    }
-
-   .hero__container__image{
-    text-align: center;
-   }
-
-   .profile_desc{
-    font-size: 1.6rem;
-   }
-
-    p.desc {
-        text-align: center;
-    }
-
-
-    
-    
-}
-
-
-/* @media screen and (max-width: 768px) {
-
-   
-    
-} */
