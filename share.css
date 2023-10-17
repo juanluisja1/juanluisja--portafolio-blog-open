@@ -33,8 +33,18 @@
     background-color: gainsboro;
     font-size: 2rem;
     text-decoration: underline;
-
   }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .bold {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
+
+
 
   .stress_skills_desc {
    
@@ -76,7 +86,6 @@
 
     main{
         display: flex;
-
        
     }
 
@@ -329,7 +338,7 @@ img{
 }
 
 .skills__desc{
-    background-color: var(--bg-wedgewood);
+    /* background-color: var(--bg-wedgewood); */
     display: flex;
     align-items: center;
     width: 100%;
@@ -339,15 +348,82 @@ img{
 
 /* styling p hero section  */
 .hero__skills{
-    background-color:var(--bg-tiber);
+    /* background-color:var(--bg-wedgewood ); */
     width: 100%;
     margin: 1rem 0;
     border-radius: 3px;
-    color: var(--font-geyser);
-    font-size: 1.2rem;
+    color: black;
+    font-size: 1.6rem;
     padding: 2rem;
     text-indent: 1rem;
     text-align: justify;
+}
+
+/* for experience sections */
+
+.experience1{
+    background-color: var(--bg-wedgewood );
+    padding: 1rem;
+}
+
+.exp__inf{
+    width: 100%;
+   
+}
+
+.flex_container{
+    display: flex;
+    margin: 4% 0;
+    flex-flow: row;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px 3px var(--bg-wedgewood ) ;
+}
+
+.flex_item_1{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    justify-content: stretch;
+    width: 100%;
+}
+
+.flex_item_2{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    justify-content: stretch;
+    width: 49%;
+}
+
+.flex_item_3{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    justify-content: stretch;
+    width: 33%;
+}
+
+.flex_item__bigger{
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: stretch;
+    flex-grow: 2;
+}
+
+.align-left {
+   text-align: left;
+   align-items: left;
+}
+
+.align-right{
+    text-align: right;
+    align-items:right;
+}
+
+.font__bigger{
+    font-size: 1.5rem;
 }
 
 
@@ -410,13 +486,27 @@ img{
     }
 
         /* profile name main menu style */
-.main-nav__item .profile__name{
-    color: white;
-    text-decoration: none;
-    margin: 0 0rem;
-    margin-right:2.5rem;
-    font-family:inherit;
-}
+    .main-nav__item .profile__name{
+        color: white;
+        text-decoration: none;
+        margin: 0 0rem;
+        margin-right:2.5rem;
+        font-family:inherit;
+    }
+
+    .flex_item_2{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        justify-content: stretch;
+        width:100%;
+    }
+
+    .section_border {
+       
+        border-radius: 0;
+    }
+    
     
 }
 
