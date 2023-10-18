@@ -469,9 +469,14 @@ img{
 
 
 footer{
-    background: url('assets/favicon_io/footer-bg-mark.png');
+   
+    background: url('./assets/favicon_io/footer-bg-mark.png');
     opacity: 1;
    
+}
+
+.main-footer {
+ 
 }
 
 .footer-water__mark{
@@ -534,6 +539,24 @@ footer{
     flex-direction: row;
 }
 
+hr.gradient {
+    height: 3px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(
+      90deg,
+      var(--bg-wedgewood) 0%,
+      var(--font-active-Sinbad) 6%,
+      var(--bg-tiber) 55%,
+      black 100%
+    );
+  }
+
+  .education {
+    padding: 1rem;
+   
+  }
+
 /* .hero{
     display: block;
 } */
@@ -552,7 +575,9 @@ footer{
 @media (max-width:935px) {
 
 
-
+    hr{
+        display: none;
+    }
     .section_border{
         margin-top:5%;
         flex-direction: column;
@@ -572,10 +597,16 @@ footer{
 
     .profile, .profile_desc, .hero__container__image{
         width: 100%;
+        
     }
 
    .hero__container__image{
     text-align: center;
+   }
+
+   .shadow__img{
+    border-radius: 1%;
+   
    }
 
    .profile_desc{
