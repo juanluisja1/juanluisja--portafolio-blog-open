@@ -463,6 +463,9 @@ img{
     color: var(--soft--skills);
 }
 
+/* education */
+
+
 
 /* footer styling */
 
@@ -682,15 +685,6 @@ hr.gradient {
     }
    
     
-
-    .main-nav__items:nth-child(1){
-        /* display:none; */
-    }
-
-    .main-nav__items:nth-child(2){
-        /* margin-right: 3%; */
-    }
-    
     .main-nav__items:nth-child(3) {
         display: flex;
         flex-direction: row;
@@ -699,6 +693,22 @@ hr.gradient {
         width: 10%;
         height: 100%;
         margin-right:3rem ;
+    }
+
+    .flex_item_2{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        justify-content: stretch;
+        width: 49%;
+    }
+    
+    .flex_item_3{
+        display:flex;
+        align-items: flex-end;
+        justify-content: right;
+        justify-content: stretch;
+        width: 33%;
     }
 
    
