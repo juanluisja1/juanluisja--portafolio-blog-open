@@ -328,11 +328,6 @@ img{
     margin: 1rem 0;
 }
 
-.hero__container__image{
-    
-    /* align-items: center; */
-    /* width:18rem; */
-}
 
 .profile_desc{
     font-weight: 'Inika', serif;
@@ -421,7 +416,7 @@ img{
     justify-content: center;
     align-items: center;
     justify-content: stretch;
-    width: 49%;
+    width: 100%;
 }
 
 .flex_item_3{
