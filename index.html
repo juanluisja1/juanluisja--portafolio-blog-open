@@ -7,10 +7,11 @@
 
     <!--CSS Styles -->
 
-    <!-- general styles -->
-    <link rel="stylesheet" href="share.css">
+    
     <!-- index (about.html) -->
     <link rel="stylesheet" href="home.css" />
+    <!-- general styles -->
+    <link rel="stylesheet" href="share.css">
     
     <!-- Favicons -->
     <link
@@ -30,7 +31,8 @@
   </head>
 
   <body>
-
+    <!-- backdrop -->
+    <div class="backdrop"></div>
     <!-- header -->
     <header class="main-header ">
       
@@ -40,7 +42,7 @@
               <span class="toggle-button__bar"></span>
               <span class="toggle-button__bar"></span>
               <span class="toggle-button__bar"></span>
-          </button>
+            </button>
           </ul>
           <ul class="main-nav__items " >
             <il class=" main-nav__item"> <a class="profile__name" href="index.html">Juan Luis Jimenez</a><span class="bolder"></span>
@@ -62,20 +64,21 @@
               </li>
           </ul>
       </nav>
-      <nav class="mobile-nav">
-        <ul class="mobile-nav__items">
-            <li class="mobile-nav__item">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="mobile-nav__item">
-                <a href="blog/index.html">Blog</a>
-            </li>
-            <li class="mobile-nav__item">
-                <a href="github/index.html">GitHub</a>
-            </li>
-        </ul>
-    </nav>
     </header> 
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__items">
+          <li class="mobile-nav__item ">
+              <a href="./index.html ">Home</a>
+          </li>
+          <li class="mobile-nav__item">
+              <a href="./blog/index.html">Blog</a>
+          </li>
+          <li class="mobile-nav__item">
+              <a href="./github/index.html">GitHub</a>
+          </li>
+      </ul>
+  </nav>
+  
     <main>
       <!-- photo to right, hard and soft skills to left -->
       <section class="hero section_border">
@@ -230,8 +233,8 @@
     
         <!-- Footer section -->
     
-        <!-- Website scripts -->
-        <script src="share.js"></script>
+        <!-- Website scripts backdrop and mobile menu-->
+        <script src="./share.js"></script>
     
         <!-- scripts  -->
         <!-- <script
