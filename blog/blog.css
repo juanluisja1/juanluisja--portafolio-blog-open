@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    margin: 9% 3%;
+    display: flex;
+   
+}
+.left-container{
+    
+    max-width: 150px;
+    
+}
+.post-container {
+    margin: 0% 5%;
+    flex-grow: 1; /* Set the middle element to grow and stretch */
+    
+}
+
+.right-container{
+    max-width: 150px;
+    
+}
