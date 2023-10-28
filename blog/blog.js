@@ -20,6 +20,7 @@ function fetchPostsAndComments() {
         let postsContainer = document.querySelector('.post-container');
         data.data.map((post) => {
           const postDiv = document.createElement('div');
+          postDiv.className = "post"
           postDiv.innerHTML = `
             <h2>${post.title}</h2>
             <p>${post.content}</p>
@@ -28,6 +29,7 @@ function fetchPostsAndComments() {
           
 
             const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment'
             commentDiv.innerHTML = `
               <strong>${post.comment}:</strong> ${post.comment}
             `;
