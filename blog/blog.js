@@ -8,18 +8,99 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.querySelectorAll('.button_comment_reply').forEach(function (button) {
-  button.addEventListener('click', function (event) {
-   actionReply(event)
-  });
-});
 
+/**
+ * 
+ * @param {event} eventTarget 
+ * @target element to be handle
+ * @id propertie has two parts, id.splits(':') = [prefix, number]
+ * number is what matter the most to indentify element 
+ */
 
-function actionReply (eventTarget){
-  console.log(eventTarget)
-  console.log(eventTarget.target.innerHTML)
-  console.log(eventTarget.target.id)
+function comment__post(eventTarget){
+
+  console.log(eventTarget.target.id);
+  
+
 }
+
+function cancel__comment (eventTarget){
+  let id = eventTarget.target.id.split(":")[1];
+  let container__comment_form = document.getElementById(id)
+  let comment__txt = document.getElementById("button_id:"+id);
+  let comment_textarea = document.getElementById("comment-input:"+id);
+
+  console.log(comment_textarea.value);
+  comment_textarea.value = "";
+  // comment_textarea.textContent ='';
+
+  container__comment_form.classList.add("hide");
+
+  comment__txt.classList.remove('hide');
+
+  console.log(eventTarget.target.id);
+
+}
+
+
+function reply_comment(eventTarget){
+
+  let id = eventTarget.target.id.split(":")[1];
+  let container__comment_form = document.getElementById(id)
+  let comment__txt = document.getElementById("button_id:"+id);
+  let comment_textarea = document.getElementById("comment-input:"+id);
+
+
+  console.log(comment_textarea.value);
+  comment_textarea.value = "";
+  // comment_textarea.textContent ='';
+
+  container__comment_form.classList.remove("hide");
+
+  comment__txt.classList.add('hide');
+
+  console.log(eventTarget.target.id);
+
+
+  console.log('reply_comment '+eventTarget.target.id)
+
+}
+ 
+function actionReply (eventTarget){
+
+
+  let form_reply
+  let uni_id
+  if(eventTarget.target.id.split(':').length > 1) {
+
+    form_reply = document.getElementById(eventTarget.target.id.split(':')[1]);
+    console.log(eventTarget)
+    console.log(eventTarget.target.innerHTML)
+    console.log(eventTarget.target.id)
+    // console.log("test "+(eventTarget.target.id.split(':'))[0])
+    form_reply.title = eventTarget.target.id
+    uni_id = eventTarget.target.id;
+    console.log("ID for button "+uni_id)
+  }
+  else {
+
+    form_reply= document.getElementById(eventTarget.target.title)
+    console.log(eventTarget)
+    console.log(eventTarget.target.innerHTML)
+    console.log(eventTarget.target.title)
+    form_reply.title = eventTarget.target.title
+    uni_id = eventTarget.target.title
+    console.log("tton "+uni_id)
+  }
+  
+  let button_comment = document.getElementById(uni_id);
+  console.log(button_comment);
+
+  form_reply.classList.contains('hide')? form_reply.classList.remove('hide') : form_reply.classList.add('hide') 
+  button_comment.classList.contains('hide') ? button_comment.classList.remove('hide') : button_comment.classList.add("hide");
+  
+}
+
 
 
 //  document.querySelectorAll('button_comment_reply').addEventListener( 'click', function ( event ) {
@@ -59,7 +140,8 @@ function fetchPostsAndComments() {
 
           post.comments.forEach((comment) => {
             const commentItem = document.createElement('div');
-            commentItem.classList.add('comment')
+            commentItem.classList.add('comment');
+            commentItem.id = comment.comment_author+':'+post.post_id;
             commentItem.textContent = comment.comment_text;
             
             const comment_author= document.createElement('div');
@@ -71,15 +153,15 @@ function fetchPostsAndComments() {
             const button = document.createElement('button');
             button.classList.add('button_comment_reply');
             button.addEventListener('click', function (event) {
-              actionReply(event);
+              reply_comment(event);
             });
-            button.innerText = `Reply to ${comment.comment_author}`;
-            button.id = `${post.post_id}_${comment.comment_author}`
+            button.innerText = `Reply to ${comment.comment_author.split(":")[0]}`;
+            button.id = `${comment.comment_author}:${post.post_id}`
             div_reply_button.appendChild(button);
       
             //add all elements to 
             comment_author.appendChild(div_reply_button);
-            commentItem.appendChild(comment_author)
+            commentItem.appendChild(comment_author);
             commentList.appendChild(commentItem);
           });
 
@@ -90,32 +172,69 @@ function fetchPostsAndComments() {
 
 
         const div__comment_post = document.createElement('div');
-        div__comment_post.classList.add('comment_author');
+        div__comment_post.classList.add('comment_post');
         div__comment_post.classList.add('comment_add');
-
-        const button = document.createElement('button');
-        button.classList.add('button_comment_reply');
-        button.addEventListener('click', function (event) {
+        const button1 = document.createElement('button');
+        button1.classList.add('button_comment_reply');
+        button1.classList.add('comment_post');
+        button1.addEventListener('click', function (event) {
           actionReply(event);
         });
-        button.id = `post-id:${post.post_id}`
-        button.innerText = `Reply to ${post.author_username}`;
-        div__comment_post.appendChild(button);
+        button1.id = `button_id:${post.post_id}`
+        button1.innerText = `Comment`;
+        // button.innerText = `Reply to ${post.author_username}`;
+        div__comment_post.appendChild(button1);
 
 
         postDiv.appendChild(div__comment_post);
 
+        const div_comment_form = document.createElement('div');
+        div_comment_form.classList.add('container__comment_form');
+        div_comment_form.classList.add("hide");
+        div_comment_form.id = post.post_id;
+        
+        
         const commentForm = document.createElement('form');
-        commentForm.classList.add('hide'); // CSS class for hiding
+        // commentForm.classList.add('hide'); // CSS class for hiding
         commentForm.classList.add('comment-form');
-        commentForm.id = post.post_id
+        // commentForm.id = post.post_id
         commentForm.innerHTML = `
-          <input type="email" id="username-input+${post.post_id}" name="username" placeholder="email/username">
-          <textarea id="comment-input" name="${post.post_id}" placeholder="Comments" rows="4" cols="50"></textarea>
-          <button type="button">Comment</button>
+          <input type="email" id="username-input+${post.post_id}" name="username" rows="4" cols="2" placeholder="email/username">
+          <textarea id="comment-input:${post.post_id}" class="comment_input" name="${post.post_id}" placeholder="Comments" rows="4" cols="2"></textarea>
         `;
+        
+       const container_submit_button =document.createElement('div');
+       container_submit_button.classList.add('comment-form-buttons-container');
 
-        postDiv.appendChild(commentForm);
+       //submit button for comment
+       const button_submit = document.createElement('button');
+       button_submit.type = "button";
+       button_submit.textContent = "Comment";
+       button_submit.id = `submit_comment__post:${post.post_id}`
+       button_submit.classList.add("post_submit_button")
+       button_submit.addEventListener('click', function (event) {
+        comment__post(event);
+      });
+       //cancel button comment
+
+       const button_cancel = document.createElement('button');
+       button_cancel.type = "button";
+       button_cancel.textContent = "Cancel";
+       button_cancel.id = `cancel_comment:${post.post_id}`
+       button_cancel.classList.add('post_cancel_button')
+       button_cancel.addEventListener('click', function (event) {
+        cancel__comment(event);
+      });
+       container_submit_button.appendChild(button_submit);
+       container_submit_button.appendChild(button_cancel);
+
+       //add container with buttons
+       commentForm.appendChild(container_submit_button);
+
+        // const cancel_button = document.createElement('button');
+
+        div_comment_form.appendChild(commentForm);
+        postDiv.appendChild(div_comment_form);
 
         postsContainer.appendChild(postDiv);
       }
@@ -124,8 +243,6 @@ function fetchPostsAndComments() {
       console.error('Error fetching data: ', error);
     });
 
-    const buttons = document.querySelectorAll('button')
-    console.log(buttons);
     
     // for (let index = 0; index < buttons.length; index++) {
     //   const button = buttons[index];
@@ -136,4 +253,3 @@ function fetchPostsAndComments() {
    
 }
 
- 

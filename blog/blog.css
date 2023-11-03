@@ -18,6 +18,7 @@ main {
 
 .hide {
     display: none;
+    visibility: hidden;
 }
 
 .left-container{
@@ -67,8 +68,27 @@ main {
     text-align: right;
 }
 
-.comment_add{
-    background: transparent;
+.comment_post {
+    display: flex;
+    margin-bottom: 0.1rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+
+.comment_post:hover{
+    transform: scale(1.5,1.5);
+}
+.comment_post:active{
+    transform: scale(1,1);
+}
+
+
+.button_comment_reply {
+    justify-content:right;
+}
+
+.comment_add > button{
+    margin-right: 0.3rem;
     font-size: 1.2rem;
 }
 
@@ -80,16 +100,61 @@ main {
     cursor: pointer;
 }
 
-.comment-form  {
-    /* display: flex; */
-    flex-direction: column;
+.container__commnent_form{
+    display: flex;
+    width: 100%;
 }
+
+.comment-form{
+   
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* margin: 0.2rem; */
+    /* margin-left: 2.5rem; */
+   
+}
+
+.comment-form > input {
+   font-size: 1.3rem;
+   width: fit-content;
+   margin-top: 0;
+   margin-bottom: 0.5rem;
+   outline: none;
+}
+
+.comment-form > textarea {
+    margin-bottom: 0.5rem;
+    outline: none;
+}
+
+.comment-form-buttons-container{
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem;
+}
+
+.comment-form-buttons-container > button{
+   
+    font-size: 1.3rem;
+    margin: 0.3rem;
+    width: 50%;
+}
+
+.comment-form-buttons-container > button:hover{
+    background-color:floralwhite;
+    outline: none;
+}
+
 
 #username-input {
     margin: 0.8% 0;
     border: none;
     font-size: 1.2rem;
 }
-#comment-input{
+.comment_input{
+    margin: 0.8% 0;
+    border: none;
     font-size: 1.2rem;
 }
