@@ -272,11 +272,13 @@ function fetchPostsAndComments() {
           ${( (post.comments && post.comments.length > 0) ? `<h3 style="margin: 0; padding: 0">Comments:</h3>` : ``  )}
         `;
 
+        const commentList = document.createElement('ul');
+        commentList.className = 'comment-list';
+        commentList.id = "comment-list:"+post.post_id;
+
         if (post.comments && post.comments.length > 0) {
 
-          const commentList = document.createElement('ul');
-          commentList.className = 'comment-list';
-          commentList.id = "comment-list:"+post.post_id;
+         
 
           post.comments.forEach((comment) => {
             const commentItem = document.createElement('div');
@@ -304,12 +306,10 @@ function fetchPostsAndComments() {
             commentItem.appendChild(comment_author);
             commentList.appendChild(commentItem);
           });
-
-          postDiv.appendChild(commentList);
-
-
+          // postDiv.appendChild(commentList);
         }
 
+        postDiv.appendChild(commentList);
 
         const div__comment_post = document.createElement('div');
         div__comment_post.classList.add('comment_post');
