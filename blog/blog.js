@@ -35,7 +35,7 @@ async function comment__post(eventTarget){
   }
   // api/resource?param1=value1&param2=value2
   // Make a GET request to the /get_user_id route
-  let validadatedUser = await fetch(`www.blog.juanluisja.live/get_user_id?username=${comment_user.value}`, {
+  let validadatedUser = await fetch(`http://blog.juanluisja.live/get_user_id?username=${comment_user.value}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -141,7 +141,7 @@ async function comment__post(eventTarget){
 
 function post_comment_post(postData){
 
-  fetch('www.blog.juanluisja.live/post_comment', {
+  fetch('http://blog.juanluisja.live/post_comment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -251,7 +251,7 @@ function actionReply (eventTarget){
 // } );
 
 function fetchPostsAndComments() {
-  fetch('www.blog.juanluisja.live/posts', {
+  fetch('http:blog.juanluisja.live/posts', {
     method: 'GET',
     headers: { 'Content-type': 'application/json' },
   })
