@@ -48,7 +48,8 @@
 
 .comment {
     background: white;
-    border: dashed lightgray;
+    border-top: dashed lightgray; 
+    /* border: dashed lightgray; */
     padding: 1rem;
     padding-bottom: 0;
     /* text-indent: 1rem; */
