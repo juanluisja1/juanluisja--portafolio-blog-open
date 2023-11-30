@@ -268,8 +268,8 @@ function fetchPostsAndComments() {
         postDiv.classList.add('post'); 
         // postDiv.className = 'post';
         postDiv.innerHTML = `
-          <h2>${post.post_title}</h2>
-          <p>${post.post_content}</p>
+          <h2 class="post__title">${post.post_title}</h2>
+          <p class="post__content">${post.post_content}</p>
           ${( (post.comments && post.comments.length > 0) ? `<h3 style="margin: 0; padding: 0">Comments:</h3>` : ``  )}
         `;
 
@@ -393,4 +393,7 @@ function fetchPostsAndComments() {
     // }
    
 }
-
+// https.createServer({
+//   key: fs.readFileSync("/etc/ssl/certs/nginx.crt");
+//   cert: fs.readFileSync("/etc/ssl/private/nginx.key");
+// },app).listen

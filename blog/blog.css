@@ -57,7 +57,14 @@
    justify-items: left;
 }
 
+.post__title{
+    font-size: 0.8rem;
+}
 
+.post__content{
+    line-height: 1.1rem;
+    text-indent: 2px;
+}
 
 .comment_author, .post_author {
     padding-top: 0;
