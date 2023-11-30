@@ -181,7 +181,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: var(--soft--skills);
+    background-color: rgba(0,0,0,0.8);
 
 }
 
