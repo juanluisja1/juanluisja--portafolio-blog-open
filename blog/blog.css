@@ -58,12 +58,16 @@
 }
 
 .post__title{
-    font-size: 0.8rem;
+   font-size: 1.3rem;
+   text-align: center;
 }
 
 .post__content{
-    line-height: 1.1rem;
-    text-indent: 2px;
+    padding: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-indent: 1.3rem;
+    text-align: justify;
 }
 
 .comment_author, .post_author {
